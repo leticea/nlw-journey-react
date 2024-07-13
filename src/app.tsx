@@ -4,11 +4,13 @@ import {
   ArrowRight,
   UserRoundPlus,
   Settings2,
+  X,
 } from "lucide-react";
 import { useState } from "react";
 
 export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
+  const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false);
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true);
@@ -16,6 +18,14 @@ export function App() {
 
   function closeGuestsInput() {
     setIsGuestsInputOpen(false);
+  }
+
+  function openGuestsModal() {
+    setIsGuestsModalOpen(true);
+  }
+
+  function closeGuestsModal() {
+    setIsGuestsModalOpen(false);
   }
 
   return (
@@ -75,15 +85,16 @@ export function App() {
 
           {isGuestsInputOpen && (
             <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
-              <div className="flex items-center gap-2 flex-1">
+              <button
+                type="button"
+                onClick={openGuestsModal}
+                className="flex items-center gap-2 flex-1 text-left"
+              >
                 <UserRoundPlus className="size-5 text-zinc-400" />
-
-                <input
-                  type="text"
-                  placeholder="Who will be on the trip?"
-                  className="bg-transparent text-lg placeholder-zinc-400 outline-none"
-                />
-              </div>
+                <span className="text-zinc-400 text-lg flex-1">
+                  Who will be on the trip?
+                </span>
+              </button>
 
               <div className="w-px h-6 bg-zinc-800" />
 
@@ -108,6 +119,19 @@ export function App() {
           .
         </p>
       </div>
+
+      {isGuestsModalOpen && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
+          <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900">
+            <div className="flex items-center justify-between">
+              <h2>Select guests</h2>
+              <button type="button" onClick={closeGuestsModal}>
+                <X className="size-5 text-zinc-400" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
