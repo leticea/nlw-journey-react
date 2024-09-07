@@ -13,6 +13,10 @@ import { useState } from "react";
 export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false);
+  const [emailsToInvite, setEmailsToInvite] = useState([
+    "leticia.mangueira@gmail.com",
+    "johndoe@gmail.com",
+  ]);
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true);
@@ -49,7 +53,7 @@ export function App() {
                 disabled={isGuestsInputOpen}
                 type="text"
                 placeholder="Where are you going?"
-                className="bg-transparent text-lg placeholder-zinc-400 outline-none"
+                className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
               />
             </div>
 
@@ -139,33 +143,19 @@ export function App() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
-                <span className="text-zinc-300">jessica.white44@yahoo.com</span>
-                <button type="button">
-                  <X className="size-4 text-zinc-400" />
-                </button>
-              </div>
-
-              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
-                <span className="text-zinc-300">jessica.white44@yahoo.com</span>
-                <button type="button">
-                  <X className="size-4 text-zinc-400" />
-                </button>
-              </div>
-
-              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
-                <span className="text-zinc-300">jessica.white44@yahoo.com</span>
-                <button type="button">
-                  <X className="size-4 text-zinc-400" />
-                </button>
-              </div>
-
-              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
-                <span className="text-zinc-300">jessica.white44@yahoo.com</span>
-                <button type="button">
-                  <X className="size-4 text-zinc-400" />
-                </button>
-              </div>
+              {emailsToInvite.map((email) => {
+                return (
+                  <div
+                    key={email}
+                    className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2"
+                  >
+                    <span className="text-zinc-300">{email}</span>
+                    <button type="button">
+                      <X className="size-4 text-zinc-400" />
+                    </button>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="w-full h-px bg-zinc-800" />
