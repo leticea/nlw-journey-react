@@ -1,4 +1,11 @@
-import { Calendar, CircleCheck, MapPin, Plus, Settings2 } from "lucide-react";
+import {
+  Calendar,
+  CircleCheck,
+  Link2,
+  MapPin,
+  Plus,
+  Settings2,
+} from "lucide-react";
 
 export function TripDetailsPage() {
   return (
@@ -77,7 +84,30 @@ export function TripDetailsPage() {
           </div>
         </div>
 
-        <div className="w-80"></div>
+        <div className="w-80 space-y-6">
+          <div className="space-y-6">
+            <h2 className="font-semibold text-xl">Important links</h2>
+            <div className="space-y-5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="space-y-1.5">
+                  <span className="block font-medium text-zinc-100">
+                    Airbnb booking
+                  </span>
+                  <span className="block text-xs text-zinc-400 truncate">
+                    https://www.airbnb.com.br/rooms/1047000112131564654789798454642113135464564554
+                  </span>
+                </div>
+                <Link2 className="size-5 text-zinc-400 shrink-0" />
+              </div>
+            </div>
+            <button className="bg-zinc-800 w-full justify-center text-zinc-200 rounded-lg px-5 h-11 font-medium flex items-center gap-2 hover:bg-zinc-700">
+              <Plus className="size-5" />
+              Register new link
+            </button>
+          </div>
+          <div className="w-full h-px bg-zinc-800" />
+          <div></div>
+        </div>
       </main>
     </div>
   );
