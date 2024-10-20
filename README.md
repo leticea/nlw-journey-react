@@ -18,6 +18,7 @@ This project was developed with the following technologies:
 - [Vite](https://vitejs.dev/guide/) - ^5.3.1
 - [TypeScript](https://www.typescriptlang.org/) - ^5.2.2
 - [Tailwindcss](https://tailwindcss.com/) - ^3.4.4
+- [Tailwind Variants](https://www.tailwind-variants.org/) - ^0.2.1
 - [Lucide React](https://lucide.dev/guide/packages/lucide-react) - ^0.408.0
 
 ## 💻 Project
