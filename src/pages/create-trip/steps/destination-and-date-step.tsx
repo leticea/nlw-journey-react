@@ -28,6 +28,8 @@ export function DestinationAndDateStep({
     return setIsDatePickerOpen(false);
   }
 
+  const displayedDate = eventStartAndEndDates ? "Date" : null;
+
   return (
     <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
       <div className="flex items-center gap-2 flex-1">
@@ -47,7 +49,9 @@ export function DestinationAndDateStep({
         className="flex items-center gap-2 text-left"
       >
         <Calendar className="size-5 text-zinc-400" />
-        <span className="text-lg text-zinc-400 w-40">When?</span>
+        <span className="text-lg text-zinc-400 w-40">
+          {displayedDate || "When?"}
+        </span>
       </button>
 
       {isDatePickerOpen && (
