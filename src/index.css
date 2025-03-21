@@ -11,5 +11,6 @@ input {
 }
 
 .rdp-root {
-  --rdp-accent-background-color: transparent;
+  --rdp-accent-background-color: #808080;
+  --rdp-accent-color: #5f5f5f;
 }
