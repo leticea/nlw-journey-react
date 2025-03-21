@@ -25,7 +25,7 @@ export function Guests() {
     <div className="space-y-6">
       <h2 className="font-semibold text-xl">Guests</h2>
       <div className="space-y-5">
-        {participants.map((participant) => {
+        {participants.map((participant, index) => {
           return (
             <div
               key={participant.id}
@@ -33,7 +33,7 @@ export function Guests() {
             >
               <div className="space-y-1.5">
                 <span className="block font-medium text-zinc-100">
-                  {participant.name}
+                  {participant.name ?? `Guest ${index}`}
                 </span>
                 <span className="block text-sm text-zinc-400 truncate">
                   {participant.email}
