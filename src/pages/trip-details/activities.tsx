@@ -2,6 +2,7 @@ import { CircleCheck } from "lucide-react";
 import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { format } from "date-fns";
 
 interface Activity {
   date: string;
@@ -24,7 +25,25 @@ export function Activities() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2.5">
+      {activities.map((activity) => {
+        return (
+          <div key={activity.date} className="space-y-2.5">
+            <div className="flex gap-2 items-baseline">
+              <span className="text-xl text-zinc-300 font-semibold">
+                Day {format(activity.date, "d")}
+              </span>
+              <span className="text-xs text-zinc-500">
+                {format(activity.date, "EEEE")}
+              </span>
+            </div>
+            <p className="text-sm text-zinc-500">
+              No activity registered on that date
+            </p>
+          </div>
+        );
+      })}
+
+      {/* <div className="space-y-2.5">
         <div className="flex gap-2 items-baseline">
           <span className="text-xl text-zinc-300 font-semibold">Day 17</span>
           <span className="text-xs text-zinc-500">Saturday</span>
@@ -54,7 +73,7 @@ export function Activities() {
             <span className="text-zinc-400 text-sm ml-auto">08:00 AM</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
