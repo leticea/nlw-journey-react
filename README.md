@@ -27,9 +27,13 @@ This project was developed with the following technologies:
 
 ## 💻 Project
 
-Project developed with Vite and TypeScript for an app for travel planning.
+plann.er is an application for travel planning and management developed with Vite and TypeScript.
+
+The tool allows the organizer to register the trip, invite all the people who will be part of the trip, and also send a trip confirmation by email, details of the trip, the activities that will take place on each day and time, the list of guests and the list of links.
 
 NLW event on the [Rocketseat](https://www.rocketseat.com.br/) platform.
+
+- [Back-end - API](https://github.com/leticea/nlw-journey-nodejs)
 
 <p align="center">
   <img alt="" src=".github/image.png">

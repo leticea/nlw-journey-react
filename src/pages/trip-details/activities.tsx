@@ -1,8 +1,8 @@
+import { format } from "date-fns";
 import { CircleCheck } from "lucide-react";
-import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { format } from "date-fns";
+import { api } from "../../lib/axios";
 
 interface Activity {
   date: string;
